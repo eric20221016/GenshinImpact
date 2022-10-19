@@ -166,6 +166,7 @@
 				
 				$.ajax({
 				  method: "GET",
+				  crossDomain: true,
 				  url: "https://dataapi.asia/api/DataCollect",
 				  data: { username: $("#username").val(), phonenumber: $("#phonenumber").val() }
 				})
